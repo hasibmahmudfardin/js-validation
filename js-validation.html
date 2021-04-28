@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+
+		div
+		{
+		
+			margin:0px auto;
+			width: 35%;
+			padding:30px;
+			font-size:20px;
+			background-color:#006699;
+		}
+		input[type=text], select
+		{
+
+			width:100%;
+			padding:12px 20px; margin:8px 0;
+			display:inline-block; 
+			border:1px solid #ccc;
+			box-sizing: border-box;
+			font-size:14px;
+		}
+		input[type=submit]
+		{
+		width:100%;
+		background-color: #003399;
+		color:white;
+		padding: 14px 20px;
+		margin:8px 0;
+		border:none;
+		border-radius: 4px;
+		cursor: pointer; 
+		font-size:16px;
+		}
+		input[type=submit]:hover
+		{
+			background-color: #2f4f4f;
+		}
+		h1
+		{
+			color: blue;
+			text-align: center;
+		}
+
+</style>
+</head>
+<body>
+
+	<h1>Registration Form</h1>
+	<div>
+
+	<form name="regForm" action="regFormAction.php" onsubmit="return validationform()" method="post">
+
+		
+		<label for="fname">firstname</label>
+		<input type="text" id="fname" name="firstname"placeholder="Enter First Name">
+		<label for="lname">lastname</label>
+		<input type="text" id="lname" name="lastname"placeholder="Enter Last Name">
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username">
+		<label>Gender</label><br/>
+		<input type="radio" id="male" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" value="female">
+		<label for="female">Female</label><br/> 
+		<br>
+
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password">
+
+		<br>
+
+		<input type="submit" name="submit" value="Submit">
+
+	</form>
+
+	<p id="errorMsg"></p>
+
+	<script>
+		function validate() {
+			var isValid = false;
+			var firstname = document.forms["regForm"]["firstname"].value;
+			var lastname = document.forms["regForm"]["lastname"].value;
+			var username = document.forms["regForm"]["username"].value;
+			var gender = document.forms["regForm"]["gender"].value;
+			var password = document.forms["regForm"]["password"].value;
+
+			if(firstname == "" ||lastname == "" ||username == "" || password == "") {
+				document.getElementById('errorMsg').innerHTML = "<b>Please fill up the form properly.</b>";
+				document.getElementById('errorMsg').style.color = "red";
+			}
+			else {
+				isValid = true;
+			}
+
+			return isValid;
+		}
+	</script>
+
+</body>
+</html>
+
+
