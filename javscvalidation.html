@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<script>
+		function validate() {
+			var isValid = false;
+			var firstname = document.Reg_forms["regForm"]["firstname"].value;
+			var lastname = document.Reg_forms["regForm"]["lastname"].value;
+			var username = document.Reg_forms["regForm"]["username"].value;
+			var gender = document.Reg_forms["regForm"]["gender"].value;
+			var password = document.Reg_forms["regForm"]["password"].value;
+
+			if (firstname.value.length <= 0){
+				alert("firstname is required");
+			firtsname.focus();
+			return false
+			}
+            if (lastname.value.length <= 0){
+				alert("lastname is required");
+			lastname.focus();
+			return false
+			}
+            if (username.value.length <= 0){
+				alert("username is required");
+			username.focus();
+			return false
+			}
+            if (gender.value.length <= 0){
+				alert("gender is required");
+			gender.focus();
+			return false
+			}
+            if (password.value.length <= 0){
+				alert("password is required");
+			password.focus();
+			return false
+			}
+			if(firstname == "" ||lastname == "" ||username == "" || password == "") {
+				document.getElementById('errorMsg').innerHTML = "<b>Please fill up the form properly.</b>";
+				document.getElementById('errorMsg').style.color = "red";
+			}
+			else {
+				isValid = true;
+			}
+
+			return isValid;
+			 {
+			console.log(document.Reg_form);
+		return false;
+		}
+		</script>
+
+</head>
+<body>
+
+	<form method="" action="Reg_form" onsubmit="validate">
+	</form> 
+
+	<h1>Registration Form</h1>
+	<div>
+		
+	<form name="regForm" action="regFormAction.php" onsubmit="return validationform()" method="post">
+
+		
+		<label for="fname">Firstname</label>
+		<input type="text" id="fname" name="firstname"placeholder="Enter First Name">
+		<br>
+		<label for="lname">Lastname</label>
+		<input type="text" id="lname" name="lastname"placeholder="Enter Last Name">
+		<br>
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username">
+		<br>
+		<label>Gender</label><br/>
+		<input type="radio" id="male" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" value="female">
+		<label for="female">Female</label><br/> 
+		<br>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password">
+		<br>
+		<input type="submit" name="submit" value="Submit">
+
+	</form>
+
+</body>
+</html>
+
+
